@@ -96,6 +96,12 @@
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -120,8 +126,42 @@ var AutoComplete = function (_React$Component) {
     return _this;
   }
 
+  _createClass(AutoComplete, [{
+    key: 'handleInput',
+    value: function handleInput(e) {
+
+      this.setState({ inputVal: e.target.value });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('input', { type: 'text', onChange: function onChange(e) {
+            return _this2.handleInput(e);
+          }, value: this.state.inputVal }),
+        _react2.default.createElement(
+          'ul',
+          null,
+          this.props.names.map(function (name, idx) {
+            return _react2.default.createElement(
+              'li',
+              { key: idx },
+              name
+            );
+          })
+        )
+      );
+    }
+  }]);
+
   return AutoComplete;
 }(_react2.default.Component);
+
+exports.default = AutoComplete;
 
 /***/ }),
 
@@ -155,8 +195,7 @@ var Root = function Root() {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_autocomplete2.default, { names: listNames }),
-    ';'
+    _react2.default.createElement(_autocomplete2.default, { names: listNames })
   );
 };
 
