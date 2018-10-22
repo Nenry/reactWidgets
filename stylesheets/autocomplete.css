@@ -1,0 +1,17 @@
+.auto-wrapper {
+  background-color: blueviolet;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+ul{
+  padding-left: 0px;
+}
+input {
+  width: 100px;
+}

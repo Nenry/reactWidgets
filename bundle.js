@@ -133,24 +133,51 @@ var AutoComplete = function (_React$Component) {
       this.setState({ inputVal: e.target.value });
     }
   }, {
+    key: 'matches',
+    value: function matches() {
+      var _this2 = this;
+
+      if (this.state.inputVal.length === 0) {
+        return this.props.names;
+      } else {
+        var selectedNames = this.props.names.filter(function (name) {
+          return name.toLowerCase().includes(_this2.state.inputVal.toLowerCase());
+        });
+        return selectedNames;
+      }
+    }
+  }, {
+    key: 'selected',
+    value: function selected(input) {
+      this.setState({ inputVal: input });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'auto-wrapper' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Autocomplete'
+        ),
         _react2.default.createElement('input', { type: 'text', onChange: function onChange(e) {
-            return _this2.handleInput(e);
+            return _this3.handleInput(e);
           }, value: this.state.inputVal }),
         _react2.default.createElement(
           'ul',
           null,
-          this.props.names.map(function (name, idx) {
+          this.matches().map(function (name, idx) {
             return _react2.default.createElement(
               'li',
-              { key: idx },
-              name
+              { key: idx, onClick: function onClick() {
+                  return _this3.selected(name);
+                } },
+              name,
+              ' '
             );
           })
         )
