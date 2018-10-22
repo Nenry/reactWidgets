@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AutoComplete from './autocomplete';
 
-const listNames = ['henry', 'joe', 'mona', 'lisa'];
+const listNames = ['Henry', 'Joe', 'Mona', 'Lisa'];
 
 const Root = () => (
 

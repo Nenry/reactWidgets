@@ -3,4 +3,6 @@ node_modules
 /package.json
 package.json
 ./bundle.js
-.bundle.js.map
+./bundle.js.map
+bundle.js
+bundle.js.map

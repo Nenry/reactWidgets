@@ -216,7 +216,7 @@ var _autocomplete2 = _interopRequireDefault(_autocomplete);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var listNames = ['henry', 'joe', 'mona', 'lisa'];
+var listNames = ['Henry', 'Joe', 'Mona', 'Lisa'];
 
 var Root = function Root() {
   return _react2.default.createElement(
