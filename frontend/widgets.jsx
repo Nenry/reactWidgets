@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AutoComplete from './autocomplete';
 
-
+const listNames = ['henry', 'joe', 'mona', 'lisa'];
 
 const Root = () => (
 
   <div>
-    test
+    <AutoComplete names={listNames} />;
  </div>
 );
 
